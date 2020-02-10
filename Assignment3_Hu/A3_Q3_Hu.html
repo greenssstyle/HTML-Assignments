@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset = "utf-8">
+		<title>Question 3</title>
+		<script type = "text/javascript">
+			//variable declarations
+			var number;
+			var guess;
+			var counter;
+					
+			//initialization
+			number = Math.floor(Math.random() * 999 + 1);
+			counter = 0;
+			
+			function registerEvents()
+			{
+				document.getElementById("button_G").addEventListener("click",
+					function()
+					{
+						guess = parseInt( document.getElementById("input").value);
+						if (isNaN(guess) || guess < 1 || guess > 1000) {
+							window.alert("Wrong input! You should enter a number between 1 and 1000.");
+						} else if ( guess > number) {
+							window.alert("Too high, try again.");
+							counter++;
+						} else if ( guess < number) {
+							window.alert("Too low, try again.");
+							counter++;
+						} else {
+							window.alert("Congratulations! You guessed the number!");
+							counter++;
+							if (counter < 10) {
+								window.alert("Either you know the secret or you got lucky!");
+							} else if (counter == 10) {
+								window.alert("Ahah! You know the secret!");
+							} else if (counter > 10) {
+								window.alert("You should be able to do better!");
+							}
+						}
+					});
+			}
+			
+			window.addEventListener("load", registerEvents);
+		</script>
+	</head>
+	
+	<body>
+		<p>
+			Guess a number between 1 and 1000: 
+			<input id="input" />
+		</p>
+		<p>
+			<button id="button_G" >Submit</button>
+		</p>
+	</body>
+</html>

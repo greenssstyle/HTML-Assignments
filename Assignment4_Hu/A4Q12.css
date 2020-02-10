@@ -1,0 +1,3 @@
+table { border-collapse: collapse;
+	table-layout: fixed;}
+td { border: 4px solid blue }

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>CSI3140 Q7</title>
+	</head>
+
+	<body>
+        <h1>
+            Website Registration Form
+        </h1>
+        <p>
+            Please complete and submit the following form.
+        </p>
+        <form method = "post" autocomplete = "on">
+            <p>
+                <label>
+                    First Name:
+                    <input type = "text" id = "firstName"
+                    placeholder = "First name" />
+                </label>
+            </p>
+            <p>
+                <label>
+                    Last Name:
+                    <input type = "text" id = "lastName"
+                    placeholder = "Last name" />
+                </label>
+            </p>
+            <p>
+                <label>
+                    Email:
+                    <input type = "email" id = "email"
+                    placeholder = "name@domain.com" />
+                </label>
+            </p>
+            <details>
+                <summary>
+                    Optional Survey Question (Click here to display)
+                </summary>
+                <p>
+                    <label>
+                        College Year:
+                        <select name = "yearList">
+                        placeholder = "Select a year" list = "years" />
+                            <option selected> </option>
+                            <option>Not yet in university</option>
+                            <option>Freshman</option>
+                            <option>Sophmore</option>
+                            <option>Junior</option>
+                            <option>Senior</option>
+                            <option>Graduate</option>
+                        </select>
+                    </label>
+                </p>
+            </details>
+            <p>
+                <input type = "submit" value = "Submit" />
+                <input type = "reset" value = "Reset" />
+            </p>
+        </form>
+    </body>
+</html>

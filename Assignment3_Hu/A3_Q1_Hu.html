@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset = "utf-8">
+		<title>Question 1</title>
+		<script type = "text/javascript">
+			//variable declarations
+			var temperature;
+			var input;
+			
+			//function definitions
+			function celsius(temp_f)
+			{
+				return 5.0/9.0 * (temp_f - 32);
+			}
+			
+			function fahrenheit(temp_c)
+			{
+				return 9.0/5.0 * temp_c + 32;
+			}
+						
+			function registerEvents()
+			{
+				document.getElementById("button_C").addEventListener("click",
+				function()
+				{
+					input = window.prompt("Enter temperature to convert to Celsius...")
+					temp_f = parseFloat( input );
+					temperature = celsius(temp_f);
+					window.alert("Temperature in C: " + temperature);
+				});
+				document.getElementById("button_F").addEventListener("click", 
+				function()
+				{
+					input = window.prompt("Enter temperature to convert to Fahrenheit...")
+					temp_c = parseFloat( input );
+					temperature = fahrenheit(temp_c);
+					window.alert("Temperature in F: " + temperature);
+				});
+			}
+			
+			window.addEventListener("load", registerEvents);
+		</script>
+	</head>
+	
+	<body>	
+		<p>
+			<button id="button_C" >Convert to C from F</button>
+			
+			<button id="button_F">Convert to F from C</button>
+		</p>
+	</body>
+</html>

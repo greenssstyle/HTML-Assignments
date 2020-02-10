@@ -1,0 +1,97 @@
+//TA: Script not seperated from HTML 5 document
+
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset = "utf-8">
+		<title>Question 5</title>
+		<script type = "text/javascript">
+			var RACE_END = 70;
+ 			var tortoise = 1;
+ 			var hare = 1;
+
+ 			function start(){
+ 				var timer = 0;
+
+ 				document.write( "<pre>" );
+ 				document.writeln( "ON YOUR MARK, GET SET" );
+ 				document.writeln( "BANG!!!" );
+ 				document.writeln( "AND THEY ARE OFF!!!" );
+
+				while ( tortoise != RACE_END && hare != RACE_END ){
+ 					moveHare();
+ 					moveTortoise();
+ 					printCurrentPositions();
+					++timer;
+				 }
+
+ 				if ( tortoise >= hare )
+ 					document.writeln( "\nTORTOISE WINS!!! YAY!!!" );
+ 				else
+ 					document.writeln( "Hare wins. Yuch!" );
+
+ 				document.writeln( "TIME ELAPSED = " + timer + " seconds" );
+ 				document.write( "</pre>" );
+ 				}
+
+			function moveTortoise(){
+				var x = parseInt( 1 + Math.random() * 10 );
+				var tortoiseMoves = [ 3, 6 ];
+
+				if ( x >= 1 && x <= 5 )
+					tortoise += parseInt( tortoiseMoves[ 0 ] );
+				else if ( x == 6 || x == 7 )
+					tortoise -= parseInt( tortoiseMoves[ 1 ] );
+				else	
+					++tortoise;
+
+				if ( tortoise < 1 )
+					tortoise = 1;
+				else if ( tortoise > RACE_END )
+					tortoise = RACE_END;
+ 				} 
+
+ 			function moveHare(){
+ 				var y = parseInt( 1 + Math.random() * 10 );
+ 				var hareMoves = [ 9, 12, 2 ];
+
+ 				if ( y == 3 || y == 4 )
+ 					hare += parseInt( hareMoves[ 0 ] );
+				else if ( y == 5 )
+ 					hare -= parseInt( hareMoves[ 1 ] );
+ 				else if ( y >= 6 && y <= 8 ) 
+ 					++hare;
+				else if ( y > 8 ) 
+					hare -= parseInt( hareMoves[ 2 ] );
+
+				if ( hare < 1 )
+ 					hare = 1;
+ 				else if ( hare > RACE_END )
+ 					hare = RACE_END;
+ 				} 
+
+ 			function printCurrentPositions(){
+ 				for ( var count = 1; count <= RACE_END; count++ ){
+ 					if ( count == tortoise && count == hare )
+ 						document.write( "OUCH!!!" );
+ 					else if ( count == hare )
+ 						document.write( 'H' );
+ 					else if ( count == tortoise )
+ 						document.write( 'T' );
+					else
+ 						document.write( ' ' );
+ 				}
+ 				document.writeln("<br />");
+ 			} 
+ // -->
+ </script>
+	</head>
+
+	<body>
+		<div>
+			<input type="button" value="Start Race" onclick="start();">
+		</div>
+            		<div id="result">
+	</body>
+</html>

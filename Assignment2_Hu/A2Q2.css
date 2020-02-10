@@ -1,0 +1,17 @@
+ /* A2Q2.css */
+div {
+	width: 100px;
+	border: 3px solid;
+	border-width: medium; 
+	background-color: aqua;
+}
+
+div:hover { 
+	border-width: thick;
+	background-color: gray;
+}
+
+a {
+	color: blue;}
+a:hover {
+	color: white;} 

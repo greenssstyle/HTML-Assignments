@@ -1,0 +1,22 @@
+<?xml version = "1.0" encoding="utf-8"?>
+<?xml-stylesheet type = "text/xsl" href = "A4Q7.xsl" ?>
+
+<product name = "Cookies">
+    <servingsize>1 Serving</servingsize>
+    <calories>
+        <total>260 Calories</total>
+        <fat>100 Calories</fat>
+    </calories>
+    <fat>
+        <total>11 grams</total>
+        <saturated>2 grams</saturated>
+    </fat>
+    <cholesterol>5 mg</cholesterol>
+    <sodium>210 mg</sodium>
+    <carbohydrates>
+        <total>36 grams</total>
+        <fiber>2 grams</fiber>
+        <sugars>15 grams</sugars>
+    </carbohydrates>
+    <protein>5 grams</protein>
+</product>

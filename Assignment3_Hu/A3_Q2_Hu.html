@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset = "utf-8">
+		<title>Question 2</title>
+		<script type = "text/javascript">
+			//variable declarations
+			var number;
+			var guess;
+					
+			number = Math.floor(Math.random() * 999 + 1);
+			
+			function registerEvents()
+			{
+				document.getElementById("button_G").addEventListener("click",
+					function()
+					{
+						guess = parseInt( document.getElementById("input").value);
+						if ( guess > number) {
+							window.alert("Too high, try again.");
+						} else if ( guess < number) {
+							window.alert("Too low, try again.");
+						} else {window.alert("Congratulations! You guessed the number!");}
+					});
+			}
+			
+			window.addEventListener("load", registerEvents);
+		</script>
+	</head>
+	
+	<body>
+		<p>
+			Guess a number between 1 and 1000: 
+			<input id="input" />
+		</p>
+		<p>
+			<button id="button_G" >Submit</button>
+		</p>
+	</body>
+</html>

@@ -1,0 +1,32 @@
+//TA:Script not seperated from HTML document
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset = "utf-8">
+		<title>Question 6</title>
+		<script>
+                                function printLatinWord(word){
+                                                return word.substr(1)+word[0]+"ay";
+                                }
+
+                                function getOutput(){
+                                                var text = document.getElementById("input").value;
+                                                var words = text.split(" ");
+                                                var out = "";
+                                                for(i=0;i<words.length;i++){
+                                                                out = out + printLatinWord(words[i])+" ";
+                                                }
+                                                document.getElementById("output").value = out;
+                                }
+                </script>
+	</head>
+
+	<body>
+                Input:<textarea id="input" style="vertical-align: middle;"></textarea>
+		&nbsp;&nbsp;&nbsp;<input type="button" value="Get Output" onclick="getOutput()"/><br><br>
+
+                Output:<textarea id="output" style="vertical-align: middle;" readonly>
+		</textarea>
+	</body>
+</html>

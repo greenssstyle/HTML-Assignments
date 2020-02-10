@@ -1,0 +1,84 @@
+<!--TA1: js should be separated.
+the page should Display the event name if the user held Shift during the mouse click. Display the element name that triggered the event if the user held Ctrl during the mouse click
+ -->
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset = "utf-8">
+		<title>Q3</title>
+
+		<script type = "text/javascript">
+		<!--
+		
+		function documentClick( event )
+		{
+			if ( !event )
+				var event = window.event;
+				
+			eventName = event;	
+			if ( event.target != null )
+				var elementName = event.target;
+			else
+				var elementName = event.srcElement;
+			
+			if ( event.ctrlKey )
+				window.alert( "ctrlKey pressed. Element name = " + elementName + " " + elementName.id );
+			
+			else if ( event.shiftKey )
+				window.alert( "shiftKey pressed. Event name = " + eventName );
+			
+			else
+				window.alert( "You clicked the document without holding crtl or shift" );
+				
+		}
+		
+		function registerEvents()
+		{
+			document.onclick = documentClick;
+		}
+		
+		-->
+	</script>
+	</head>
+
+	<body onload = "registerEvents()">
+		<p>Click anywhere. Hold ctrl or shift while clicking to see event name or element name.</p>
+		<ol>
+			<li>Ice Cream
+				<ul>
+					<li>Neapolitan</li>
+					<li>Rocky Road</li>
+					<li>Cherry</li>
+				</ul>
+			</li>
+		</ol>
+
+		<p><a href="http://www.uottawa.ca/en">University of Ottawa</a></p>
+
+		<label>Campus<input name = "thingsliked"
+				type = "checkbox" value = "Campus">
+		</label>
+
+		<details>
+                <summary>
+                    Optional Survey Question (Click here to display)
+                </summary>
+                <p>
+                    <label>
+                        College Year:
+                        <select name = "yearList">
+                        placeholder = "Select a year" list = "years" />
+                            <option selected> </option>
+                            <option>Not yet in university</option>
+                            <option>Freshman</option>
+                            <option>Sophmore</option>
+                            <option>Junior</option>
+                            <option>Senior</option>
+                            <option>Graduate</option>
+                        </select>
+                    </label>
+                </p>
+            	</details>
+	</body>
+</html>
